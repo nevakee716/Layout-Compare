@@ -1,0 +1,14 @@
+.cwLayoutCompare table.cw-grid thead.compareTable-header th,
+.cwLayoutCompare table.cw-grid thead.compareTable-header span,
+.cwLayoutCompare table.cw-grid thead.compareTable-header a {
+  color: #ffffff;
+}
+.cwLayoutCompare table.cw-grid tbody tr th {
+  background-color: #ffffff;
+  color: #03a0ce;
+  border: solid 1px;
+  border-top: 0px;
+}
+.cwLayoutCompare table.cw-grid tbody tr td.different {
+  background-color: #ecadadd1;
+}

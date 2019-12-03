@@ -1,0 +1,14 @@
+{
+  "Name": "cw-layout-comparator",
+  "DisplayName": "El Comparator",
+  "Description": "Allow users to compare your data",
+  "JavaScriptClassName": "cwLayoutCompare",
+  "Options": [
+    {
+      "Id": "init-options",
+      "DisplayName": "Init options",
+      "Description": "options",
+      "Type": 0
+    }
+  ]
+}

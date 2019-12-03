@@ -1,0 +1,28 @@
+<div ng-controller="cwCustomQueryController">
+  <table class="cw-grid">
+    <thead class="compareTable-header">
+      <tr>
+        <th></th>
+        <th><span ng-bind-html="getCDS(ng.originalObject)" /></th>
+        <th ng-repeat="o in ng.objectsToCompare"><span ng-bind-html="getCDS(o)" /></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-if="p.indexOf('_id') === -1 && p.indexOf('_abbreviation') === -1" ng-repeat="(p,v) in ng.originalObject.properties">
+        <th>{{getPropertyLabel(p)}}</th>
+        <td class="same"><span ng-bind-html="getPropertyValue(ng.originalObject,p)"> </span></td>
+        <td ng-class="o.properties[p] !== v ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompare"><span ng-if="o.properties[p] !== v" <span ng-bind-html="getPropertyValue(o,p)"></span></td>
+      </tr>
+      <tr ng-repeat="(assoNodeId,originalAssociatedObjects) in ng.originalObject.associations">
+        <th>{{getNodeName(assoNodeId)}}</th>
+        <td class="same">
+          <div ng-repeat="ao in originalAssociatedObjects"><span ng-bind-html="getCDS(ao)" /></div>
+        </td>
+        <td ng-class="o.properties[p] !== v ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompare">
+          <div ng-if="!isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]"><i class="fa fa-plus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectAdded)" /></div>
+          <div ng-if="!isAssoIn(o.associations[assoNodeId],aObjectDeleted)" ng-repeat="aObjectDeleted in originalAssociatedObjects"><i class="fa fa-minus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectDeleted)" /></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

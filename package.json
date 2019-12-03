@@ -1,0 +1,21 @@
+{
+  "name": "cwLayoutCompare",
+  "description": "Allow you to compare your objects with differents version of it",
+  "version": "0.0.0",
+  "main": "cwLayoutCompare.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nevakee716/cwLayoutCompare"
+  },
+  "author": "Jerome GRONDIN",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/nevakee716/cwLayoutCompare/issues"
+  },
+  "homepage": "",
+  "wiki": "https://github.com/nevakee716/cwLayoutCompare/wiki",
+  "evolve-version": "4.2-4.6"
+}
