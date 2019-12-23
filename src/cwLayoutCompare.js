@@ -180,6 +180,7 @@
         });
 
         $scope.outsideObjectChanged = function() {
+          $scope.ng.outSideObject = null;
           self.getItem($scope.ng.objectIdToAdd, function(json) {
             if (json.status === "Ok") {
               $scope.ng.outSideObject = json.object;
