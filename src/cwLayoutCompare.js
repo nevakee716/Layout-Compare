@@ -138,7 +138,7 @@
         $scope.ng.originalObject = self.object;
         $scope.ng.objectsToCompareLeft = [];
         $scope.ng.objectsToCompareRight = [];
-        $scope.ng.numberOfColumn = 2;
+        $scope.ng.numberOfColumn = 3;
 
         self.getObjects($scope);
         let q = cwApi.getQueryStringObject();
@@ -153,9 +153,11 @@
             t.Nodes.forEach(function(n) {
               if (self.object.associations[n]) {
                 if (iter === 0) {
-                  self.object.associations[n].forEach(function(o) {
+                  $scope.ng.leftName = self.viewSchema.NodesByID[n].NodeName;
+                  self.object.associations[n].forEach(function(o, i) {
                     self.getItem(o.object_id, function(json) {
                       if (json.status === "Ok") {
+                        json.object.order = i;
                         $scope.ng.numberOfColumn += 1;
                         $scope.ng.objectsToCompareLeft.push(json.object);
                         $scope.$apply();
@@ -163,10 +165,12 @@
                     });
                   });
                 } else if (iter === 1) {
-                  self.object.associations[n].forEach(function(o) {
+                  $scope.ng.rightName = self.viewSchema.NodesByID[n].NodeName;
+                  self.object.associations[n].forEach(function(o, i) {
                     self.getItem(o.object_id, function(json) {
                       if (json.status === "Ok") {
                         $scope.ng.numberOfColumn += 1;
+                        json.object.order = i;
                         $scope.ng.objectsToCompareRight.push(json.object);
                         $scope.$apply();
                       }
