@@ -1,12 +1,55 @@
+/* GLOBAL */
+/* LOGIN */
+/* DIAGRAM */
+/* HOME PAGE */
+/* MENU LEFT */
+/* MAIN MENU */
+/* SUB MENU */
+/* PAGE TAB */
+/* DROPDOWN NOTIFICATIONS */
+/* SOCIAL */
+/* LIST BOX */
+/* PROPERTIES GROUP */
+/* BUTTONS */
+/* PAGE ACTIONS */
+/* ACCORDIONS */
+/* DISCUSSIONS */
+/* WORLD MAP */
+/* USER ZONE */
+/* POPUP */
+/* BADGES */
+/* TASKS & NOTIFICATIONS */
+/* GLOBAL SEARCH */
+/* TOP BAR */
+/* GRID */
+/* DIAGRAM TILE */
+/* MATRIX ADVANCED */
+.cwLayoutCompareButtons {
+  z-index: 100;
+  margin-top: -42px;
+  position: absolute;
+}
+.cwLayoutCompareButtons .btn.page-action.selected {
+  background-color: #03b4e7;
+}
 .cwLayoutCompare table.cw-grid thead.compareTable-header th,
 .cwLayoutCompare table.cw-grid thead.compareTable-header span,
 .cwLayoutCompare table.cw-grid thead.compareTable-header a {
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #03a0ce;
+  font-size: large;
 }
 .cwLayoutCompare table.cw-grid tbody tr th {
   background-color: #ffffff;
   color: #03a0ce;
   border: solid 1px;
+  border-top: 0px;
+}
+.cwLayoutCompare table.cw-grid tbody tr th.propertyGroup {
+  background-color: #03a0ce;
+  color: #ffffff;
+  border: solid 1px;
+  border-color: #03a0ce;
   border-top: 0px;
 }
 .cwLayoutCompare table.cw-grid tbody tr td.different {

@@ -9,6 +9,8 @@
     cwApi.registerLayoutForJSActions(this);
     this.viewSchema = viewSchema;
     this.trueFalseArray = [translateText("true"), translateText("false")];
+    this.displayAllProp = false;
+    this.searchDisplayed = false;
   };
 
   cwLayout.prototype.getTemplatePath = function(folder, templateName) {
@@ -16,6 +18,10 @@
   };
 
   cwLayout.prototype.drawAssociations = function(output, associationTitleText, object) {
+    output.push('<div class="cw-visible cwLayoutCompareButtons" id="cwLayoutCompareButtons_' + this.nodeID + '">');
+    output.push('<a class="btn page-action no-text fa fa-search" id="cwLayoutCompareSearch_' + this.nodeID + '" title="' + $.i18n.prop("compare_search") + '"></a>');
+    output.push('<a class="btn page-action no-text fa fa-eye" id="cwLayoutCompareDisplay_' + this.nodeID + '" title="' + $.i18n.prop("compare_display_change") + '"></a>');
+    output.push("</div>");
     output.push('<div class="cw-visible cwLayoutCompare" id="cwLayoutCompare' + this.nodeID + '"></div>');
     this.object = object;
   };
@@ -42,8 +48,83 @@
     });
   };
 
+  cwLayout.prototype.hidePropertyGroup = function() {
+    let q = document.querySelectorAll(".cwPropertiesTableContainer");
+    for (let i = 0; i < q.length; i++) {
+      q[i].style.display = "none";
+    }
+  };
+
+  cwLayout.prototype.getObjects = function($scope, ots) {
+    let query = {
+      ObjectTypeScriptName: this.viewSchema.NodesByID[this.viewSchema.RootNodesId].ObjectTypeScriptName,
+      PropertiesToLoad: ["name"],
+      Where: [],
+    };
+
+    cwApi.CwDataServicesApi.send("flatQuery", query, function(err, res) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      $scope.ng.objectsToSelect = res;
+      $scope.$apply();
+    });
+  };
+
+  cwLayout.prototype.activateButtonsEvent = function() {
+    let searchButton = document.getElementById("cwLayoutCompareSearch_" + this.nodeID);
+    if (searchButton) {
+      searchButton.addEventListener("click", this.manageSearch.bind(this));
+    }
+
+    var displayButton = document.getElementById("cwLayoutCompareDisplay_" + this.nodeID);
+    if (displayButton) {
+      displayButton.addEventListener("click", this.manageDisplayAllProperties.bind(this));
+    }
+  };
+
+  // manage search
+  cwLayout.prototype.manageSearch = function(event) {
+    var self = this;
+    if (this.angularScope) {
+      if (this.searchDisplayed === true) {
+        self.searchDisplayed = false;
+        event.target.title = $.i18n.prop("compare_hide_search");
+        event.target.classList.remove("selected");
+      } else {
+        self.searchDisplayed = true;
+        event.target.title = $.i18n.prop("compare_show_search");
+        event.target.classList.add("selected");
+      }
+      this.angularScope.ng.displaySearch = this.searchDisplayed;
+      this.angularScope.$apply();
+    }
+  };
+
+  // manage search
+  cwLayout.prototype.manageDisplayAllProperties = function(event) {
+    var self = this;
+    if (this.angularScope) {
+      if (this.displayAllProp === true) {
+        self.displayAllProp = false;
+        event.target.title = $.i18n.prop("compare_hide_allprop");
+        event.target.classList.remove("selected");
+      } else {
+        self.displayAllProp = true;
+        event.target.title = $.i18n.prop("compare_show_allprop");
+        event.target.classList.add("selected");
+      }
+      this.angularScope.ng.displayAllProp = this.displayAllProp;
+      this.angularScope.$apply();
+    }
+  };
+
   cwLayout.prototype.applyJavaScript = function() {
     let self = this;
+    this.hidePropertyGroup();
+    this.activateButtonsEvent();
+
     cwApi.CwAsyncLoader.load("angular", function() {
       let loader = cwApi.CwAngularLoader,
         templatePath,
@@ -52,18 +133,61 @@
       templatePath = self.getTemplatePath("cwLayoutCompare", "compareTable");
 
       loader.loadControllerWithTemplate("cwLayoutCompare", $container, templatePath, function($scope, $sce) {
+        self.angularScope = $scope;
         $scope.ng = {};
         $scope.ng.originalObject = self.object;
-        $scope.ng.objectsToCompare = [];
+        $scope.ng.objectsToCompareLeft = [];
+        $scope.ng.objectsToCompareRight = [];
+        $scope.ng.numberOfColumn = 2;
 
-        self.object.associations[self.nodeID].forEach(function(o) {
-          self.getItem(o.object_id, function(json) {
+        self.getObjects($scope);
+        let q = cwApi.getQueryStringObject();
+        let tab = "tab0";
+        if (q.cwtabid) tab = q.cwtabid;
+
+        let iter = 0;
+        $scope.ng.selectedProperties = self.viewSchema.NodesByID[self.viewSchema.RootNodesId].PropertiesSelected;
+        $scope.ng.propertyGroups = self.viewSchema.PropertyGroupsById;
+        self.viewSchema.Tab.Tabs.forEach(function(t) {
+          if (t.Id === tab) {
+            t.Nodes.forEach(function(n) {
+              if (self.object.associations[n]) {
+                if (iter === 0) {
+                  self.object.associations[n].forEach(function(o) {
+                    self.getItem(o.object_id, function(json) {
+                      if (json.status === "Ok") {
+                        $scope.ng.numberOfColumn += 1;
+                        $scope.ng.objectsToCompareLeft.push(json.object);
+                        $scope.$apply();
+                      }
+                    });
+                  });
+                } else if (iter === 1) {
+                  self.object.associations[n].forEach(function(o) {
+                    self.getItem(o.object_id, function(json) {
+                      if (json.status === "Ok") {
+                        $scope.ng.numberOfColumn += 1;
+                        $scope.ng.objectsToCompareRight.push(json.object);
+                        $scope.$apply();
+                      }
+                    });
+                  });
+                }
+                iter = iter + 1;
+              }
+            });
+          }
+        });
+
+        $scope.outsideObjectChanged = function() {
+          self.getItem($scope.ng.objectIdToAdd, function(json) {
             if (json.status === "Ok") {
-              $scope.ng.objectsToCompare.push(json.object);
+              $scope.ng.outSideObject = json.object;
               $scope.$apply();
             }
           });
-        });
+        };
+
         $scope.displayItemString = function(item) {
           return $sce.trustAsHtml(item.displayName);
         };
