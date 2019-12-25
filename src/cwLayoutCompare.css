@@ -32,12 +32,18 @@
 .cwLayoutCompareButtons .btn.page-action.selected {
   background-color: #03b4e7;
 }
+.cwLayoutCompare table.cw-grid {
+  min-width: 99%;
+}
 .cwLayoutCompare table.cw-grid thead.compareTable-header th,
 .cwLayoutCompare table.cw-grid thead.compareTable-header span,
 .cwLayoutCompare table.cw-grid thead.compareTable-header a {
   background-color: #ffffff;
   color: #03a0ce;
   font-size: large;
+}
+.cwLayoutCompare table.cw-grid thead.compareTable-header th {
+  min-width: 300px;
 }
 .cwLayoutCompare table.cw-grid tbody tr th {
   background-color: #ffffff;
