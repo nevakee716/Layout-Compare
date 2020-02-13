@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "main": "cwLayoutCompare.js",
   "scripts": {
-    "patch": "cpm --package patch && cpm --publish C:/Dev/evolve-layouts",
-    "minor": "cpm --package minor && cpm --publish C:/Dev/evolve-layouts",
-    "major": "cpm --package major && cpm --publish C:/Dev/evolve-layouts",
-    "publish": "cpm --publish C:/Dev/evolve-layouts"
+    "patch": "cpm --package patch && cpm --register C:/Dev/evolve-layouts",
+    "minor": "cpm --package minor && cpm --register C:/Dev/evolve-layouts",
+    "major": "cpm --package major && cpm --register C:/Dev/evolve-layouts",
+    "publish": "cpm --register C:/Dev/evolve-layouts"
   },
   "repository": {
     "type": "git",
