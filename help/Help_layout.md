@@ -18,9 +18,9 @@
 
 
 
-  <link crossorigin="anonymous" media="all" integrity="sha512-hddDYPWR0gBbqLRmIZP242WMEiYsVkYI2UCYCVUHB4h5DhD2cbtFJYG+HPh21dZGb+sbgDHxQBNJCBq7YbmlBQ==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-02a3eaa24db2bd1ed9b64450595fc2cf.css" />
-  <link crossorigin="anonymous" media="all" integrity="sha512-8BxpFTogSyEi7yQb7rCnH1J/gTxVdHNk1Rrg92rh2zMf++XM8Us8Pcp+5GzjxqRxkax0Ckz52LufuEGch2uE7w==" rel="stylesheet" href="https://github.githubassets.com/assets/site-1faffb77dc8b20778aa60ecb5998972e.css" />
-    <link crossorigin="anonymous" media="all" integrity="sha512-YdIM/FwAk7kxvPGCpeT2JXxPrThv4m9rH7fLzjn+dg3zKb+PWOaxX1ioiOcmOb64+LeDKgBXsGL4b/BJQY/cdA==" rel="stylesheet" href="https://github.githubassets.com/assets/github-102d2679bcc893600ce928d5c6d34297.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-Wr5yTs8gD42bv1Ll5KLXr7cXzuVcbKOcuHmifgt/6YlZuluDTyAJnfnYhNYKpgVK1F51ks8Y2QA+XENQoMp/PA==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-5abe724ecf200f8d9bbf52e5e4a2d7af.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-DnBQhWGJ7icZU4LPhD6FlaZ9IrBOmbP4/4bEfpGQRbCLwutaFNqbuAaM8Y/w7IygRCMuOybM7fLDGe+UV9TEjQ==" rel="stylesheet" href="https://github.githubassets.com/assets/site-0e7050856189ee27195382cf843e8595.css" />
+    <link crossorigin="anonymous" media="all" integrity="sha512-xRfL0sykVG3yMqc5O5RpH7KWire1Bs4tOMAIHJ6dYl+UmbmuW4d6+gAWFR3IAIPmkrOMsVXWCVSjwv/GNJaiQw==" rel="stylesheet" href="https://github.githubassets.com/assets/github-c517cbd2cca4546df232a7393b94691f.css" />
     
     
     
@@ -67,9 +67,11 @@
   
   
 
-    <meta name="request-id" content="DA08:40D3B:6216629:94AE9E7:5E008A50" data-pjax-transient>
+  <meta name="request-id" content="D686:47A87:8ADB8:CDA6A:5E451C42" data-pjax-transient="true" /><meta name="html-safe-nonce" content="b30b9c5e6d22d8fa3b3871300efaf8b601e9e54a" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6bnVsbCwicmVxdWVzdF9pZCI6IkQ2ODY6NDdBODc6OEFEQjg6Q0RBNkE6NUU0NTFDNDIiLCJ2aXNpdG9yX2lkIjoiNDMyNjMxMjM0MjU2OTk1MDI3NCIsInJlZ2lvbl9lZGdlIjoiYW1zIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-pjax-transient="true" /><meta name="visitor-hmac" content="31fc2e0c03e6fe1ee852de967d37caf75ebcfeeabd957a2e2fa11f82e3bd1587" data-pjax-transient="true" />
 
 
+
+  <meta name="github-keyboard-shortcuts" content="" data-pjax-transient="true" />
 
   
 
@@ -79,8 +81,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-    <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="DA08:40D3B:6216629:94AE9E7:5E008A50" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" /><meta name="octolytics-dimension-visitor_id" content="7831666269316221520" />
-
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-ga_id" content="" class="js-octo-ga-id" />
 
 
 
@@ -99,16 +100,13 @@
 
       <meta name="expected-hostname" content="github.com">
 
-      <meta name="js-proxy-site-detection-payload" content="YWE2MjVhMzRkYmY2ODZlZGY0ODg0NmE2YzRmOWJiOWFlZWIxMThmMWVjOWRhMTk3YTI0ZjU4MGRhODg1MmU3NHx7InJlbW90ZV9hZGRyZXNzIjoiOTIuMTg0LjEwNC4xNzkiLCJyZXF1ZXN0X2lkIjoiREEwODo0MEQzQjo2MjE2NjI5Ojk0QUU5RTc6NUUwMDhBNTAiLCJ0aW1lc3RhbXAiOjE1NzcwOTM3MTIsImhvc3QiOiJnaXRodWIuY29tIn0=">
 
-    <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS">
+    <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,RELATED_ISSUES">
 
-    <meta name="html-safe-nonce" content="e8ada9387ad4117135d4bf06d939de4063b3d904">
-
-  <meta http-equiv="x-pjax-version" content="61f8c219e8739359a3bf9c46bc342ad6">
+  <meta http-equiv="x-pjax-version" content="a0f83e3110b13e637bd080f842234cf6">
   
 
-      <link crossorigin="anonymous" media="all" integrity="sha512-8BxpFTogSyEi7yQb7rCnH1J/gTxVdHNk1Rrg92rh2zMf++XM8Us8Pcp+5GzjxqRxkax0Ckz52LufuEGch2uE7w==" rel="stylesheet" href="https://github.githubassets.com/assets/site-1faffb77dc8b20778aa60ecb5998972e.css" />
+      <link crossorigin="anonymous" media="all" integrity="sha512-DnBQhWGJ7icZU4LPhD6FlaZ9IrBOmbP4/4bEfpGQRbCLwutaFNqbuAaM8Y/w7IygRCMuOybM7fLDGe+UV9TEjQ==" rel="stylesheet" href="https://github.githubassets.com/assets/site-0e7050856189ee27195382cf843e8595.css" />
 
 
 
@@ -121,9 +119,6 @@
   <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.githubassets.com/favicon.ico">
 
 <meta name="theme-color" content="#1e2327">
-
-
-
 
 
   <link rel="manifest" href="/manifest.json" crossOrigin="use-credentials">
@@ -141,7 +136,7 @@
 
     
     
-    
+
 
 
         <header class="Header-old header-logged-out js-details-container Details position-relative f4 py-2" role="banner">
@@ -159,7 +154,7 @@
         <div class="d-flex flex-items-center">
             <a href="/join?source=header"
               class="d-inline-block d-lg-none f5 text-white no-underline border border-gray-dark rounded-2 px-2 py-1 mr-3 mr-sm-5"
-              data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;DA08:40D3B:6216629:94AE9E7:5E008A50&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwLayoutCompare/wiki/Home.md&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="6dc58c9ce94e7ed1904672c239735c4b7a1ca58bf18b8e90464a3132680d7b19"
+              data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwLayoutCompare/wiki/Home.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="5ff60b48a62e9e40d12224b5af9ce404214fe9229e3d6973b4a83c5a7b200b81"
               data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">
               Sign&nbsp;up
             </a>
@@ -299,10 +294,11 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=viUf0+XkRaNF5GJTHcfIAuJLa8P3pcde1aGQRnjb/pGjA5qS3NloxGSoqBcp2xCeR8z0dGRkrcMoPcg9e1sDvw=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations"
           spellcheck="false"
           autocomplete="off"
           >
+          <input type="hidden" value="eKry6C1SEdsDhNN++GEN14MT30THpvag1JNY6KnQCySnJKTq1ZesQtD5aP9cq6tmQ+teZx8OYNBKC2OJyAxumw==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -426,13 +422,13 @@
 
         <a href="/login?return_to=%2Fnevakee716%2FcwLayoutCompare%2Fwiki%2FHome.md"
           class="HeaderMenu-link no-underline mr-3"
-          data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;DA08:40D3B:6216629:94AE9E7:5E008A50&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwLayoutCompare/wiki/Home.md&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="e493ee9d27691f842a19b088b256e47f47b2f86ab5685b7670f172b31cc9a064"
+          data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwLayoutCompare/wiki/Home.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="764af502939b729e82865006c96f734d649c57fec137d0e3447931097e7ec6d3"
           data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">
           Sign&nbsp;in
         </a>
           <a href="/join?source=header"
             class="HeaderMenu-link d-inline-block no-underline border border-gray-dark rounded-1 px-2 py-1"
-            data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;client_id&quot;:null,&quot;originating_request_id&quot;:&quot;DA08:40D3B:6216629:94AE9E7:5E008A50&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwLayoutCompare/wiki/Home.md&quot;,&quot;referrer&quot;:null,&quot;user_id&quot;:null}}" data-hydro-click-hmac="e493ee9d27691f842a19b088b256e47f47b2f86ab5685b7670f172b31cc9a064"
+            data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/nevakee716/cwLayoutCompare/wiki/Home.md&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="764af502939b729e82865006c96f734d649c57fec137d0e3447931097e7ec6d3"
             data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">
             Sign&nbsp;up
           </a>
@@ -449,6 +445,10 @@
     <div id="js-flash-container">
 
 </div>
+
+
+  
+  <div class="js-notification-shelf-not-found-error" hidden></div>
 
 
 
@@ -530,7 +530,7 @@
           <li class="lh-condensed mb-3"><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api" class="link-gray">Developer API</a></li>
           <li class="lh-condensed mb-3"><a href="http://partner.github.com/" data-ga-click="Footer, go to partner, text:partner" class="link-gray ">Partners</a></li>
           <li class="lh-condensed mb-3"><a href="https://atom.io" data-ga-click="Footer, go to atom, text:atom" class="link-gray ">Atom</a></li>
-          <li class="lh-condensed mb-3"><a href="http://electron.atom.io/" data-ga-click="Footer, go to electron, text:electron" class="link-gray ">Electron</a></li>
+          <li class="lh-condensed mb-3"><a href="http://electronjs.org" data-ga-click="Footer, go to electron, text:electron" class="link-gray ">Electron</a></li>
           <li class="lh-condensed mb-3"><a href="https://desktop.github.com/" data-ga-click="Footer, go to desktop, text:desktop" class="link-gray ">GitHub Desktop</a></li>
         </ul>
       </div>
@@ -552,6 +552,7 @@
           <li class="lh-condensed mb-3"><a href="https://github.blog" data-ga-click="Footer, go to blog, text:blog" class="link-gray ">Blog</a></li>
           <li class="lh-condensed mb-3"><a href="/about/careers" data-ga-click="Footer, go to careers, text:careers" class="link-gray">Careers</a></li>
           <li class="lh-condensed mb-3"><a href="/about/press" data-ga-click="Footer, go to press, text:press" class="link-gray">Press</a></li>
+          <li class="lh-condensed mb-3"><a href="https://socialimpact.github.com/" data-ga-click="Footer, go to social impact, text:social impact" class="link-gray">Social Impact</a></li>
           <li class="lh-condensed mb-3"><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop" class="link-gray">Shop</a></li>
         </ul>
       </div>
@@ -571,7 +572,7 @@
         <li><a href="https://github.com/github" data-ga-click="Footer, go to github's org, text:github" title="GitHub's organization" style="color: #959da5;"><svg height="20" class="octicon octicon-mark-github d-block" alt="GitHub" viewBox="0 0 16 16" version="1.1" width="20" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a></li>
       </ul>
       <ul class="list-style-none d-flex text-gray">
-        <li class="mr-3">&copy; 2019 GitHub, Inc.</li>
+        <li class="mr-3">&copy; 2020 GitHub, Inc.</li>
         <li class="mr-3"><a href="/site/terms" data-ga-click="Footer, go to terms, text:terms" class="link-gray">Terms</a></li>
         <li><a href="/site/privacy" data-ga-click="Footer, go to privacy, text:privacy" class="link-gray">Privacy</a></li>
       </ul>
@@ -591,10 +592,10 @@
   </div>
 
 
-    <script crossorigin="anonymous" integrity="sha512-mdrBasYG+QjgS391PSyVkPr06io3gWplCVbPscguetNEHxIEt+mZwCeCxPR9eMNfda6qNuibNFqBo5ak2+O/hg==" type="application/javascript" src="https://github.githubassets.com/assets/compat-bootstrap-99dac16a.js"></script>
-    <script crossorigin="anonymous" integrity="sha512-/VSJJF96vCzSgC6y09Z4FqzjjuXRWOKIq2twF0Nb5/v8xy4qzngnH6Au6TFwbmNN/lborYJsojEpgIbYjoGvHQ==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-fd548924.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-0ME9ftiuUHsYYdeBdLtPHbeL4j0UjTAy9YxHpX0AaZLPPex/JTS5mmHozk8Bnp2czMkd3FmK8DfVID7zxmD5OA==" type="application/javascript" id="js-conditional-compat" data-src="https://github.githubassets.com/assets/compat-bootstrap-d0c13d7e.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-52SEoSSU9xJzVkVh4EhSAqx2ahFi63p4TLyodiqlbaq3mS6EJIiwk9e95rGZciPCofFDIAcvCOvknoIHyanhIA==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-e76484a1.js"></script>
     
-    <script crossorigin="anonymous" async="async" integrity="sha512-0mcBYsTTDNy016WuG7Zu/Pb5dsdoVzVb5FlxH4btAPKKyTBKn+5g6N6lXxmMo1WokYH8uOYuLpTgLjU29jSqcA==" type="application/javascript" src="https://github.githubassets.com/assets/github-bootstrap-d2670162.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-5CoIYUCe+5DCHOCo4mlEo1RjS4O+PmsQ5Y45h8dpd4yacX3H2O/BaLuX8njAbUI8pTD4gLFC1VMYjTVdEtH6pw==" type="application/javascript" src="https://github.githubassets.com/assets/github-bootstrap-e42a0861.js"></script>
     
     
     
