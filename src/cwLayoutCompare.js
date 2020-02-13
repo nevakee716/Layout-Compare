@@ -160,6 +160,9 @@
                         json.object.order = i;
                         $scope.ng.numberOfColumn += 1;
                         $scope.ng.objectsToCompareLeft.push(json.object);
+                        $scope.ng.objectsToCompareLeft.sort(function(a, b) {
+                          return a.order - b.order;
+                        });
                         $scope.$apply();
                       }
                     });
@@ -172,6 +175,9 @@
                         $scope.ng.numberOfColumn += 1;
                         json.object.order = i;
                         $scope.ng.objectsToCompareRight.push(json.object);
+                        $scope.ng.objectsToCompareRight.sort(function(a, b) {
+                          return a.order - b.order;
+                        });
                         $scope.$apply();
                       }
                     });
