@@ -4,7 +4,10 @@
   "version": "0.1.0",
   "main": "cwLayoutCompare.js",
   "scripts": {
-    "test": ""
+    "patch": "cpm --package patch",
+    "minor": "cpm --package minor",
+    "major": "cpm --package major",
+    "publish": "cpm --publish C:/Dev/evolve-layouts"
   },
   "repository": {
     "type": "git",
