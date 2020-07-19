@@ -3,9 +3,9 @@
     <thead class="compareTable-header">
       <tr>
         <th></th>
-        <th ng-repeat="o in ng.objectsToCompareLeft"><span ng-bind-html="getCDS(o)" /></th>
-        <th><span ng-bind-html="getCDS(ng.originalObject)" /></th>
-        <th ng-repeat="o in ng.objectsToCompareRight"><span ng-bind-html="getCDS(o)" /></th>
+        <th ng-repeat="o in ng.objectsToCompareLeft"><span ng-bind-html="getCDS(o)"></span></th>
+        <th><span ng-bind-html="getCDS(ng.originalObject)"></span></th>
+        <th ng-repeat="o in ng.objectsToCompareRight"><span ng-bind-html="getCDS(o)"></span></th>
         <th ng-if="ng.displaySearch">
           <select ng-change="outsideObjectChanged()" ng-model="ng.objectIdToAdd">
             <option value="{{o.object_id}}" ng-repeat="o in ng.objectsToSelect">{{o.name}}</option>
@@ -20,10 +20,22 @@
 
       <tr ng-repeat-end ng-repeat="p in pg.properties">
         <th>{{getPropertyLabel(p)}}</th>
-        <td ng-class="o.properties[p] !== ng.originalObject.properties[p] ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompareLeft"><span ng-if="ng.displayAllProp || o.properties[p] !== ng.originalObject.properties[p]" <span ng-bind-html="getPropertyValue(o,p)"></span></td>
+        <td ng-class="o.properties[p] !== ng.originalObject.properties[p] ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompareLeft">
+          <span ng-if="ng.displayAllProp || o.properties[p] !== ng.originalObject.properties[p]" ng-bind-html="getPropertyValue(o,p)"></span>
+        </td>
         <td class="same"><span ng-bind-html="getPropertyValue(ng.originalObject,p)"> </span></td>
-        <td ng-class="o.properties[p] !== ng.originalObject.properties[p] ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompareRight"><span ng-if="ng.displayAllProp || o.properties[p] !== ng.originalObject.properties[p]" <span ng-bind-html="getPropertyValue(o,p)"></span></td>
-        <td ng-if="ng.displaySearch && ng.outSideObject" ng-class="ng.outSideObject.properties[p] !== ng.originalObject.properties[p] ? 'different' : 'same'"><span ng-if="ng.displayAllProp || ng.outSideObject.properties[p] !== ng.originalObject.properties[p]" <span ng-bind-html="getPropertyValue(ng.outSideObject,p)"></span></td>
+        <td ng-class="o.properties[p] !== ng.originalObject.properties[p] ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompareRight">
+          <span ng-if="ng.displayAllProp || o.properties[p] !== ng.originalObject.properties[p]" ng-bind-html="getPropertyValue(o,p)"></span>
+        </td>
+        <td
+          ng-if="ng.displaySearch && ng.outSideObject"
+          ng-class="ng.outSideObject.properties[p] !== ng.originalObject.properties[p] ? 'different' : 'same'"
+        >
+          <span
+            ng-if="ng.displayAllProp || ng.outSideObject.properties[p] !== ng.originalObject.properties[p]"
+            ng-bind-html="getPropertyValue(ng.outSideObject,p)"
+          ></span>
+        </td>
       </tr>
       <tr>
         <th class="propertyGroup" colspan="{{ng.numberOfColumn}}">Associations</th>
@@ -31,22 +43,59 @@
       <tr ng-repeat="(assoNodeId,originalAssociatedObjects) in ng.originalObject.associations">
         <th>{{getNodeName(assoNodeId)}}</th>
         <td ng-class="o.properties[p] !== v ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompareLeft">
-          <div ng-if="ng.displayAllProp && isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]"><span ng-bind-html="getCDS(aObjectAdded)" /></div>
-          <div style="color:green" ng-if="!isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]"><i class="fa fa-plus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectAdded)" /></div>
-          <div style="color:red" ng-if="!isAssoIn(o.associations[assoNodeId],aObjectDeleted)" ng-repeat="aObjectDeleted in originalAssociatedObjects"><i class="fa fa-minus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectDeleted)" /></div>
+          <div ng-if="ng.displayAllProp && isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]">
+            <span ng-bind-html="getCDS(aObjectAdded)"></span>
+          </div>
+          <div style="color: green;" ng-if="!isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]">
+            <i class="fa fa-plus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectAdded)"></span>
+          </div>
+          <div
+            style="color: red;"
+            ng-if="!isAssoIn(o.associations[assoNodeId],aObjectDeleted)"
+            ng-repeat="aObjectDeleted in originalAssociatedObjects"
+          >
+            <i class="fa fa-minus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectDeleted)"></span>
+          </div>
         </td>
         <td class="same">
-          <div ng-repeat="ao in originalAssociatedObjects"><span ng-bind-html="getCDS(ao)" /></div>
+          <div ng-repeat="ao in originalAssociatedObjects"><span ng-bind-html="getCDS(ao)"></span></div>
         </td>
         <td ng-class="o.properties[p] !== v ? 'different' : 'same'" ng-repeat="o in ng.objectsToCompareRight">
-          <div ng-if="ng.displayAllProp && isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]"><span ng-bind-html="getCDS(aObjectAdded)" /></div>
-          <div style="color:green" ng-if="!isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]"><i class="fa fa-plus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectAdded)" /></div>
-          <div style="color:red" ng-if="!isAssoIn(o.associations[assoNodeId],aObjectDeleted)" ng-repeat="aObjectDeleted in originalAssociatedObjects"><i class="fa fa-minus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectDeleted)" /></div>
+          <div ng-if="ng.displayAllProp && isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]">
+            <span ng-bind-html="getCDS(aObjectAdded)"></span>
+          </div>
+          <div style="color: green;" ng-if="!isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in o.associations[assoNodeId]">
+            <i class="fa fa-plus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectAdded)"></span>
+          </div>
+          <div
+            style="color: red;"
+            ng-if="!isAssoIn(o.associations[assoNodeId],aObjectDeleted)"
+            ng-repeat="aObjectDeleted in originalAssociatedObjects"
+          >
+            <i class="fa fa-minus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectDeleted)"></span>
+          </div>
         </td>
         <td ng-if="ng.displaySearch && ng.outSideObject">
-          <div ng-if="ng.displayAllProp && isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in ng.outSideObject.associations[assoNodeId]"><span ng-bind-html="getCDS(aObjectAdded)" /></div>
-          <div style="color:green" ng-if="!isAssoIn(originalAssociatedObjects,aObjectAdded)" ng-repeat="aObjectAdded in ng.outSideObject.associations[assoNodeId]"><i class="fa fa-plus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectAdded)" /></div>
-          <div style="color:red" ng-if="!isAssoIn(ng.outSideObject.associations[assoNodeId],aObjectDeleted)" ng-repeat="aObjectDeleted in originalAssociatedObjects"><i class="fa fa-minus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectDeleted)" /></div>
+          <div
+            ng-if="ng.displayAllProp && isAssoIn(originalAssociatedObjects,aObjectAdded)"
+            ng-repeat="aObjectAdded in ng.outSideObject.associations[assoNodeId]"
+          >
+            <span ng-bind-html="getCDS(aObjectAdded)"></span>
+          </div>
+          <div
+            style="color: green;"
+            ng-if="!isAssoIn(originalAssociatedObjects,aObjectAdded)"
+            ng-repeat="aObjectAdded in ng.outSideObject.associations[assoNodeId]"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectAdded)"></span>
+          </div>
+          <div
+            style="color: red;"
+            ng-if="!isAssoIn(ng.outSideObject.associations[assoNodeId],aObjectDeleted)"
+            ng-repeat="aObjectDeleted in originalAssociatedObjects"
+          >
+            <i class="fa fa-minus" aria-hidden="true"></i> <span ng-bind-html="getCDS(aObjectDeleted)"></span>
+          </div>
         </td>
       </tr>
     </tbody>
