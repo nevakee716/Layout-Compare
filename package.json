@@ -1,7 +1,7 @@
 {
   "name": "cwLayoutCompare",
   "description": "Allow you to compare your objects with differents version of it",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "cwLayoutCompare.js",
   "scripts": {
     "patch": "cpm --package patch && cpm --register C:/Dev/evolve-layouts",
